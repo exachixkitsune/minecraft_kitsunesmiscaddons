@@ -5,7 +5,7 @@
 	{	"item": "minecraft:emerald" }
 	],
 	"result": {
-		"item": "kitsunesmiscaddons:xp_collector",
+		"item": "kitsunesmiscaddons:xp_collector_enhanced",
 		"count": 1
 	}
 }

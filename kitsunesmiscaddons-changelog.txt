@@ -1,0 +1,4 @@
+Kitsune's misc addons changelog
+
+-- Version 1.1
+	Recipe fix; now the enhanced recipe will actually produce the right output.
