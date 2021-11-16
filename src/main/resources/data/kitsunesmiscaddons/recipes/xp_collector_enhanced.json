@@ -1,0 +1,11 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+	{	"item": "kitsunesmiscaddons:xp_collector" },
+	{	"item": "minecraft:emerald" }
+	],
+	"result": {
+		"item": "kitsunesmiscaddons:xp_collector",
+		"count": 1
+	}
+}

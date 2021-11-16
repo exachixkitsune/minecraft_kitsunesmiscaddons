@@ -1,0 +1,65 @@
+{
+	"variants": {
+		"face=wall,facing=south": {
+			"model": "kitsunesmiscaddons:block/xp_collector_enhanced",
+			"uvlock": false
+		},
+		"face=wall,facing=west": {
+			"model": "kitsunesmiscaddons:block/xp_collector_enhanced",
+			"y": 90,
+			"uvlock": false
+		},
+		"face=wall,facing=north": {
+			"model": "kitsunesmiscaddons:block/xp_collector_enhanced",
+			"y": 180,
+			"uvlock": false
+		},
+		"face=wall,facing=east": {
+			"model": "kitsunesmiscaddons:block/xp_collector_enhanced",
+			"y": 270,
+			"uvlock": false
+		},
+		"face=floor,facing=south": {
+			"model": "kitsunesmiscaddons:block/xp_collector_enhanced",
+			"x": 90,
+			"uvlock": false
+		},
+		"face=floor,facing=west": {
+			"model": "kitsunesmiscaddons:block/xp_collector_enhanced",
+			"x": 90,
+			"y": 90,
+			"uvlock": false
+		},
+		"face=floor,facing=north": {
+			"model": "kitsunesmiscaddons:block/xp_collector_enhanced",
+			"x": 90,
+			"y": 180,
+			"uvlock": false
+		},
+		"face=floor,facing=east": {
+			"model": "kitsunesmiscaddons:block/xp_collector_enhanced",
+			"x": 90,
+			"y": 270,
+			"uvlock": false
+		},
+		"face=ceiling,facing=south": {
+			"model": "kitsunesmiscaddons:block/xp_collector_enhanced",
+			"uvlock": false
+		},
+		"face=ceiling,facing=west": {
+			"model": "kitsunesmiscaddons:block/xp_collector_enhanced",
+			"y": 90,
+			"uvlock": false
+		},
+		"face=ceiling,facing=north": {
+			"model": "kitsunesmiscaddons:block/xp_collector_enhanced",
+			"y": 180,
+			"uvlock": false
+		},
+		"face=ceiling,facing=east": {
+			"model": "kitsunesmiscaddons:block/xp_collector_enhanced",
+			"y": 270,
+			"uvlock": false
+		}
+	}
+}

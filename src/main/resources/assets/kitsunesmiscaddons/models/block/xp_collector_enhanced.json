@@ -1,0 +1,8 @@
+{
+	"parent": "kitsunesmiscaddons:block/xp_collector",
+	"textures": {
+		"faces": "kitsunesmiscaddons:block/xp_collector_enhanced_face",
+		"sides": "kitsunesmiscaddons:block/xp_collector_enhanced_side",
+		"particle": "#sides"
+	}
+}

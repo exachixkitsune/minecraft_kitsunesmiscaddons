@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" S ",
+		"EAE",
+		" E " ],
+	"key": {
+		"S": { "item": "minecraft:string"},
+		"A": { "tag": "minecraft:saplings"},
+		"E": { "item": "minecraft:emerald"}
+	},
+	"result": {
+		"item": "kitsunesmiscaddons:xp_collector",
+		"count": 1
+	}
+}

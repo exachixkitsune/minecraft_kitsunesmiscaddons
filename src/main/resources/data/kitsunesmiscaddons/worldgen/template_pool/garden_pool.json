@@ -1,0 +1,44 @@
+{
+	"name": "kitsunesmiscaddons:garden_pool",
+	// Templated from https://github.com/TelepathicGrunt/StructureTutorialMod/blob/1.16.3-Forge-jigsaw/src/main/resources/data/structure_tutorial/worldgen/template_pool/run_down_house/start_pool.json
+	
+	"fallback": "minecraft:empty",
+	"elements": [
+		{
+			"weight": 1,
+			"element": {
+				"location": "kitsunesmiscaddons:garden_1",
+				"processors": "minecraft:empty",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"location": "kitsunesmiscaddons:garden_2",
+				"processors": "minecraft:empty",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"location": "kitsunesmiscaddons:garden_3",
+				"processors": "minecraft:empty",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"location": "kitsunesmiscaddons:garden_4",
+				"processors": "minecraft:empty",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		}
+	]
+}

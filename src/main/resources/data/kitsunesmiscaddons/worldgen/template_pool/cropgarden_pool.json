@@ -1,0 +1,17 @@
+{
+	"name": "kitsunesmiscaddons:cropgarden_pool",
+	// Templated from https://github.com/TelepathicGrunt/StructureTutorialMod/blob/1.16.3-Forge-jigsaw/src/main/resources/data/structure_tutorial/worldgen/template_pool/run_down_house/start_pool.json
+	
+	"fallback": "minecraft:empty",
+	"elements": [
+		{
+			"weight": 1,
+			"element": {
+				"location": "kitsunesmiscaddons:cropgarden",
+				"processors": "minecraft:empty",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		}
+	]
+}
