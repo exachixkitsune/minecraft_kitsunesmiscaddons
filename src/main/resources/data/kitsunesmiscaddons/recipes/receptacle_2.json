@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"   ",
+		"SCS",
+		"SRS" ],
+	"key": {
+		"S": { "item": "minecraft:stone"},
+		"R": { "item": "minecraft:redstone_block"},
+		"C": { "item": "kitsunesmiscaddons:keycube_2"}
+	},
+	"result": {
+		"item": "kitsunesmiscaddons:receptacle_2",
+		"count": 1
+	}
+}

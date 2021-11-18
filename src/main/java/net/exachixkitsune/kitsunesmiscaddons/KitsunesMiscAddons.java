@@ -14,6 +14,7 @@ import net.exachixkitsune.kitsunesmiscaddons.setup.TileEntityRegister;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome.Category;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.FlatChunkGenerator;
 import net.minecraft.world.gen.feature.structure.Structure;
@@ -35,7 +36,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 public class KitsunesMiscAddons {
 	public static final String MODID = "kitsunesmiscaddons";
     public static final String MODNAME = "Kitsunes Misc Addons";
-    public static final String VERSION = "1.16.5-1.1";
+    public static final String VERSION = "1.16.5-1.2";
     
     // Constructor
  	public KitsunesMiscAddons() {
@@ -69,13 +70,25 @@ public class KitsunesMiscAddons {
  	}
  	
  	public void biomeModification(final BiomeLoadingEvent event) {
+ 		if ((event.getCategory() == Category.NONE) ||
+ 				(event.getCategory() == Category.THEEND) ||
+ 				(event.getCategory() == Category.NETHER) ||
+ 				(event.getCategory() == Category.OCEAN)) {
+ 			// Don't add to this biome at all
+ 			return;
+ 		}
  		// Only add the garden if the biome is wet
  		if (event.getClimate().downfall > 0.35) {
  			event.getGeneration().getStructures().add(() -> StructureConfiguredRegister.CONFIGURED_GARDEN  );
  	 		event.getGeneration().getStructures().add(() -> StructureConfiguredRegister.CONFIGURED_CROPGARDEN );
  		}
+ 		
+ 		if (event.getCategory() == Category.PLAINS) {
+ 			event.getGeneration().getStructures().add(() -> StructureConfiguredRegister.CONFIGURED_DUNGEON );
+ 		}
  		event.getGeneration().getStructures().add(() -> StructureConfiguredRegister.CONFIGURED_LAMPPOST );
  		event.getGeneration().getStructures().add(() -> StructureConfiguredRegister.CONFIGURED_RESTSTOP );
+		event.getGeneration().getStructures().add(() -> StructureConfiguredRegister.CONFIGURED_TOWER );
  	}
  	
  	private static Method GETCODEC_METHOD;
@@ -104,6 +117,8 @@ public class KitsunesMiscAddons {
             tempMap.putIfAbsent(StructureRegister.LAMPPOST.get(),   DimensionStructuresSettings.DEFAULTS.get(StructureRegister.LAMPPOST.get()));
             tempMap.putIfAbsent(StructureRegister.RESTSTOP.get(),   DimensionStructuresSettings.DEFAULTS.get(StructureRegister.RESTSTOP.get()));
             tempMap.putIfAbsent(StructureRegister.CROPGARDEN.get(), DimensionStructuresSettings.DEFAULTS.get(StructureRegister.CROPGARDEN.get()));
+            tempMap.putIfAbsent(StructureRegister.DUNGEON.get(),    DimensionStructuresSettings.DEFAULTS.get(StructureRegister.DUNGEON.get()));
+            tempMap.putIfAbsent(StructureRegister.TOWER.get(),      DimensionStructuresSettings.DEFAULTS.get(StructureRegister.TOWER.get()));
             serverWorld.getChunkSource().generator.getSettings().structureConfig = tempMap;
         }
     }

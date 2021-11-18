@@ -2,7 +2,7 @@
 
 This is a minecraft mod for Minecraft v1.16.5, under Forge 36.2.0.
 
-Version 1.1
+Version 1.2
 
 # Build instructions
 This repository contains only the source relvant for the Mod. My build process is:

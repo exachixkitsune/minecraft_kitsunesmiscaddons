@@ -1,0 +1,6 @@
+{
+	"parent": "kitsunesmiscaddons:block/keycube_base",
+	"textures": {
+		"sides" : "kitsunesmiscaddons:block/keycube_1_face_unpowered"
+	}
+}

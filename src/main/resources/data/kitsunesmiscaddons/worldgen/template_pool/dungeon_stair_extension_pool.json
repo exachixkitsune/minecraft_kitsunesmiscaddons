@@ -1,0 +1,16 @@
+{
+	"name": "kitsunesmiscaddons:dungeon_stair_extension_pool",
+
+	"fallback": "minecraft:empty",
+	"elements": [
+		{
+			"weight": 1,
+			"element": {
+				"location": "kitsunesmiscaddons:dungeon_stair_extension",
+				"processors": "minecraft:empty",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		}
+	]
+}

@@ -1,0 +1,15 @@
+{
+  "parent": "kitsunesmiscaddons:block/keycube_1",
+  "display": {
+	  "firstperson_lefthand": {
+	      "rotation": [ 0, 90, 0 ],
+	      "translation": [ -4, 1, -3 ],
+	      "scale": [ 1, 1, 1 ]
+	    },
+	  "firstperson_righthand": {
+	      "rotation": [ 0, 0, 0 ],
+	      "translation": [-4, 1, -3 ],
+	      "scale": [ 1, 1, 1 ]
+	    }
+  }
+}

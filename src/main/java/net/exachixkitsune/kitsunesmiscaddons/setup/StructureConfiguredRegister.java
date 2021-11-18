@@ -13,6 +13,8 @@ public class StructureConfiguredRegister {
 	public static StructureFeature<?, ?> CONFIGURED_LAMPPOST   = StructureRegister.LAMPPOST.get().configured(IFeatureConfig.NONE);
 	public static StructureFeature<?, ?> CONFIGURED_RESTSTOP   = StructureRegister.RESTSTOP.get().configured(IFeatureConfig.NONE);
 	public static StructureFeature<?, ?> CONFIGURED_CROPGARDEN = StructureRegister.CROPGARDEN.get().configured(IFeatureConfig.NONE);
+	public static StructureFeature<?, ?> CONFIGURED_DUNGEON    = StructureRegister.DUNGEON.get().configured(IFeatureConfig.NONE);
+	public static StructureFeature<?, ?> CONFIGURED_TOWER      = StructureRegister.TOWER.get().configured(IFeatureConfig.NONE);
 	
 	public static void registerConfiguredStructures() {
         Registry<StructureFeature<?, ?>> registry = WorldGenRegistries.CONFIGURED_STRUCTURE_FEATURE;
@@ -22,11 +24,15 @@ public class StructureConfiguredRegister {
         Registry.register(registry, new ResourceLocation(KitsunesMiscAddons.MODID, "configured_lamppost"), CONFIGURED_LAMPPOST);
         Registry.register(registry, new ResourceLocation(KitsunesMiscAddons.MODID, "configured_reststop"), CONFIGURED_RESTSTOP);
         Registry.register(registry, new ResourceLocation(KitsunesMiscAddons.MODID, "configured_cropgarden"), CONFIGURED_CROPGARDEN);
+        Registry.register(registry, new ResourceLocation(KitsunesMiscAddons.MODID, "configured_dungeon"), CONFIGURED_DUNGEON);
+        Registry.register(registry, new ResourceLocation(KitsunesMiscAddons.MODID, "configured_tower"), CONFIGURED_TOWER);
         
         
         FlatGenerationSettings.STRUCTURE_FEATURES.put(StructureRegister.GARDEN.get(), CONFIGURED_GARDEN);
         FlatGenerationSettings.STRUCTURE_FEATURES.put(StructureRegister.LAMPPOST.get(), CONFIGURED_LAMPPOST);
         FlatGenerationSettings.STRUCTURE_FEATURES.put(StructureRegister.RESTSTOP.get(), CONFIGURED_RESTSTOP);
         FlatGenerationSettings.STRUCTURE_FEATURES.put(StructureRegister.CROPGARDEN.get(), CONFIGURED_CROPGARDEN);
+        FlatGenerationSettings.STRUCTURE_FEATURES.put(StructureRegister.DUNGEON.get(), CONFIGURED_DUNGEON);
+        FlatGenerationSettings.STRUCTURE_FEATURES.put(StructureRegister.TOWER.get(), CONFIGURED_TOWER);
     }
 }
