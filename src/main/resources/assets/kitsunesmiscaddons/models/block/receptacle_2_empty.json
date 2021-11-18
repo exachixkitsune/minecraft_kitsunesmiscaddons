@@ -1,0 +1,6 @@
+{
+	"parent": "kitsunesmiscaddons:block/receptacle_base_empty",
+	"textures": {
+		"sides" : "kitsunesmiscaddons:block/receptacle_2_side_unpowered"
+	}
+}

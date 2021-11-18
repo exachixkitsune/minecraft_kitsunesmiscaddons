@@ -1,0 +1,12 @@
+{
+	"variants": {
+		"occupied=false": {
+			"model": "kitsunesmiscaddons:block/receptacle_1_empty",
+			"uvlock": false
+		},
+		"occupied=true": {
+			"model": "kitsunesmiscaddons:block/receptacle_1_filled",
+			"uvlock": false
+		}
+	}
+}

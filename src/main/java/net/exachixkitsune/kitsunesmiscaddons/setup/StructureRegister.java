@@ -27,6 +27,10 @@ public class StructureRegister {
 			STRUCTURE.register("reststop",   () -> (new RestStop(NoFeatureConfig.CODEC)));
 	public static final RegistryObject<Structure<NoFeatureConfig>> CROPGARDEN =
 			STRUCTURE.register("cropgarden", () -> (new CropGarden(NoFeatureConfig.CODEC)));
+	public static final RegistryObject<Structure<NoFeatureConfig>> TOWER   =
+			STRUCTURE.register("tower",   () -> (new Tower(NoFeatureConfig.CODEC)));
+	public static final RegistryObject<Structure<NoFeatureConfig>> DUNGEON =
+			STRUCTURE.register("dungeon", () -> (new Dungeon(NoFeatureConfig.CODEC)));
 	
 	public static void setupStructures() {
         setupMapSpacingAndLand(
@@ -38,10 +42,10 @@ public class StructureRegister {
         
         setupMapSpacingAndLand(
         		LAMPPOST.get(), /* The instance of the structure */
-                new StructureSeparationSettings(15 /* average distance apart in chunks between spawn attempts */,
-                        10 /* minimum distance apart in chunks between spawn attempts. MUST BE LESS THAN ABOVE VALUE*/,
+                new StructureSeparationSettings(10 /* average distance apart in chunks between spawn attempts */,
+                        5 /*z minimum distance apart in chunks between spawn attempts. MUST BE LESS THAN ABOVE VALUE*/,
                         1345678901 /* this modifies the seed of the structure so no two structures always spawn over each-other. Make this large and unique. */),
-                true);
+                false);
         setupMapSpacingAndLand(
         		RESTSTOP.get(), /* The instance of the structure */
                 new StructureSeparationSettings(40 /* average distance apart in chunks between spawn attempts */,
@@ -53,6 +57,18 @@ public class StructureRegister {
                 new StructureSeparationSettings(20 /* average distance apart in chunks between spawn attempts */,
                         18 /* minimum distance apart in chunks between spawn attempts. MUST BE LESS THAN ABOVE VALUE*/,
                         1843503642 /* this modifies the seed of the structure so no two structures always spawn over each-other. Make this large and unique. */),
+                true);
+        setupMapSpacingAndLand(
+        		DUNGEON.get(), /* The instance of the structure */
+                new StructureSeparationSettings(50 /* average distance apart in chunks between spawn attempts */,
+                        40 /* minimum distance apart in chunks between spawn attempts. MUST BE LESS THAN ABOVE VALUE*/,
+                        567891245 /* this modifies the seed of the structure so no two structures always spawn over each-other. Make this large and unique. */),
+                false);
+        setupMapSpacingAndLand(
+        		TOWER.get(), /* The instance of the structure */
+                new StructureSeparationSettings(30 /* average distance apart in chunks between spawn attempts */,
+                        25 /*z minimum distance apart in chunks between spawn attempts. MUST BE LESS THAN ABOVE VALUE*/,
+                        1345678901 /* this modifies the seed of the structure so no two structures always spawn over each-other. Make this large and unique. */),
                 true);
     }
 	

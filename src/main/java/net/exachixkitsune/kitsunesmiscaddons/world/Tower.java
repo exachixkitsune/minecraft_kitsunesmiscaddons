@@ -30,16 +30,16 @@ import net.minecraft.world.gen.Heightmap;
 
 // No small amount of this is found from https://github.com/TelepathicGrunt/StructureTutorialMod/blob/1.16.3-Forge-jigsaw/src/main/java/com/telepathicgrunt/structuretutorial/structures/RunDownHouseStructure.java
 
-public class LampPost extends Structure<NoFeatureConfig> {
+public class Tower extends Structure<NoFeatureConfig> {
 
 	// Only call super
-	public LampPost(Codec<NoFeatureConfig> codec) {
+	public Tower(Codec<NoFeatureConfig> codec) {
 		super(codec);
 	}
 
 	@Override
 	public IStartFactory<NoFeatureConfig> getStartFactory() {
-		return LampPost.Start::new;
+		return Tower.Start::new;
 	}
 	
 	@Override
@@ -64,7 +64,7 @@ public class LampPost extends Structure<NoFeatureConfig> {
 			return false;
 		
 		// Check area around - is flat?
-		int area_to_check = 2;
+		int area_to_check = 4;
 		
 		int min_landHeight = landHeight;
 		int max_landHeight = landHeight;
@@ -102,8 +102,8 @@ public class LampPost extends Structure<NoFeatureConfig> {
 			JigsawManager.addPieces(
 					dynRegIn,
                     new VillageConfig(() -> dynRegIn.registryOrThrow(Registry.TEMPLATE_POOL_REGISTRY)
-                    		.get(new ResourceLocation(KitsunesMiscAddons.MODID, "lamppost_pool")),
-                    		1),
+                    		.get(new ResourceLocation(KitsunesMiscAddons.MODID, "tower_lower_pool")),
+                    		10),
                     AbstractVillagePiece::new,
                     chunkGenIn,
                     templateManagerIn,

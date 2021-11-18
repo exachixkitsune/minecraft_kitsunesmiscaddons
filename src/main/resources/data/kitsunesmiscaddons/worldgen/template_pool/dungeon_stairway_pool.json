@@ -1,0 +1,16 @@
+{
+	"name": "kitsunesmiscaddons:dungeon_stairway_pool",
+	
+	"fallback": "minecraft:empty",
+	"elements": [
+		{
+			"weight": 1,
+			"element": {
+				"location": "kitsunesmiscaddons:dungeon_stairway",
+				"processors": "minecraft:empty",
+				"projection": "rigid",
+				"element_type": "minecraft:single_pool_element"
+			}
+		}
+	]
+}

@@ -2,5 +2,10 @@
 	"itemGroup.kitsunesmiscaddons": "Misc Addons",
 	
 	"block.kitsunesmiscaddons.xp_collector": "Air Freshener",
-	"block.kitsunesmiscaddons.xp_collector_enhanced": "Enhanced Air Freshener"
+	"block.kitsunesmiscaddons.xp_collector_enhanced": "Enhanced Air Freshener",
+	
+	"block.kitsunesmiscaddons.keycube_1": "Key Cube (A)",
+	"block.kitsunesmiscaddons.keycube_2": "Key Cube (B)",
+	"block.kitsunesmiscaddons.receptacle_1": "Cube Receptacle (A)",
+	"block.kitsunesmiscaddons.receptacle_2": "Cube Receptacle (B)"
 }

@@ -1,4 +1,19 @@
 Kitsune's misc addons changelog
 
+-- Version 1.2
+	New items/Blocks
+		Keycube
+		Receptacle for the keycube
+
+	More structures:
+		Dungeon - Jigsaw/Multipart underground structure with a treasure room
+		Tower - Aboveground multipart structure with a little treasure.
+
+	Generation Adjustment
+		Structures now generate only in certain biomes.
+		Many structures have had their separations adjusted.
+		Lampposts now check for a flat area and don't adjust ground around them.
+
+
 -- Version 1.1
 	Recipe fix; now the enhanced recipe will actually produce the right output.

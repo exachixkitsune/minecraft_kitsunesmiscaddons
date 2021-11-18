@@ -9,7 +9,6 @@ import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MutableBoundingBox;
-import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.util.registry.DynamicRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockReader;
@@ -21,7 +20,6 @@ import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.jigsaw.JigsawManager;
 import net.minecraft.world.gen.feature.structure.AbstractVillagePiece;
 import net.minecraft.world.gen.feature.structure.Structure;
-import net.minecraft.world.gen.feature.structure.StructurePiece;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.gen.feature.structure.VillageConfig;
 import net.minecraft.world.gen.feature.template.TemplateManager;
@@ -30,31 +28,35 @@ import net.minecraft.world.gen.Heightmap;
 
 // No small amount of this is found from https://github.com/TelepathicGrunt/StructureTutorialMod/blob/1.16.3-Forge-jigsaw/src/main/java/com/telepathicgrunt/structuretutorial/structures/RunDownHouseStructure.java
 
-public class LampPost extends Structure<NoFeatureConfig> {
+public class Dungeon extends Structure<NoFeatureConfig> {
+	
 
 	// Only call super
-	public LampPost(Codec<NoFeatureConfig> codec) {
+	public Dungeon(Codec<NoFeatureConfig> codec) {
 		super(codec);
 	}
 
 	@Override
 	public IStartFactory<NoFeatureConfig> getStartFactory() {
-		return LampPost.Start::new;
+		return Dungeon.Start::new;
 	}
 	
 	@Override
     public GenerationStage.Decoration step() {
-		return GenerationStage.Decoration.SURFACE_STRUCTURES;
+		return GenerationStage.Decoration.UNDERGROUND_STRUCTURES;
 	}
 
 	@Override
 	protected boolean isFeatureChunk(ChunkGenerator chunkGenIn, BiomeProvider biomeIn, long seedIn,
 			SharedSeedRandom sharedSeedIn, int chunkXIn, int chunkZIn, Biome BiomeIn, ChunkPos chunkPosIn,
 			NoFeatureConfig NoFeatConfigIn) {
-		// In summary; is the middle block for this not a fluid.
+		// Two criteria:
+		//  Approximatly flat area
+		//  No water in area.
 		
+		// Watercheck
 		BlockPos centerOfChunk = new BlockPos(chunkXIn * 16, 0, chunkZIn * 16);
-		
+				
 		int landHeight = chunkGenIn.getFirstOccupiedHeight(centerOfChunk.getX(), centerOfChunk.getZ(), Heightmap.Type.WORLD_SURFACE_WG);
 		
 		IBlockReader columnOfBlocks = chunkGenIn.getBaseColumn(centerOfChunk.getX(), centerOfChunk.getZ());
@@ -63,8 +65,9 @@ public class LampPost extends Structure<NoFeatureConfig> {
 		if (!topBlock.getFluidState().isEmpty())
 			return false;
 		
-		// Check area around - is flat?
-		int area_to_check = 2;
+		
+		// Check - if land is too variable in height reject
+		int area_to_check = 4;
 		
 		int min_landHeight = landHeight;
 		int max_landHeight = landHeight;
@@ -78,8 +81,9 @@ public class LampPost extends Structure<NoFeatureConfig> {
 			}
 		}
 		
-		if ((max_landHeight - min_landHeight) > 1)
+		if ((max_landHeight - min_landHeight) > 4)
 			return false;
+		
 		
 		return true;
 	}
@@ -102,8 +106,8 @@ public class LampPost extends Structure<NoFeatureConfig> {
 			JigsawManager.addPieces(
 					dynRegIn,
                     new VillageConfig(() -> dynRegIn.registryOrThrow(Registry.TEMPLATE_POOL_REGISTRY)
-                    		.get(new ResourceLocation(KitsunesMiscAddons.MODID, "lamppost_pool")),
-                    		1),
+                    		.get(new ResourceLocation(KitsunesMiscAddons.MODID, "dungeon_stairway_pool")),
+                    		10),
                     AbstractVillagePiece::new,
                     chunkGenIn,
                     templateManagerIn,
@@ -113,13 +117,8 @@ public class LampPost extends Structure<NoFeatureConfig> {
                     false,
                     true);
 			
-			Vector3i structureCenter = this.pieces.get(0).getBoundingBox().getCenter();
-            int xOffset = centerPos.getX() - structureCenter.getX();
-            int zOffset = centerPos.getZ() - structureCenter.getZ();
-            for(StructurePiece structurePiece : this.pieces){
-                structurePiece.move(xOffset, 0, zOffset);
-            }
-
+			this.pieces.forEach(piece -> piece.move(0, -14, 0));
+			
             // Sets the bounds of the structure once you are finished.
             this.calculateBoundingBox();
 		}
